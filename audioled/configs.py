@@ -388,3 +388,16 @@ def createSortingGraph():
 
     fg.addConnection(Sorting, 0, led_out, 0)
     return fg
+
+
+def createTesting1Graph():
+    fg = filtergraph.FilterGraph(recordTimings=True)
+
+    led_out = devices.LEDOutput()
+    fg.addEffectNode(led_out)
+
+    Testing = colors.StaticRGBColor()
+    fg.addEffectNode(Testing)
+
+    fg.addConnection(Testing, 0, led_out, 0)
+    return fg
